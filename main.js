@@ -1,7 +1,7 @@
 const input_city = getElement(".input-city")
 const section = getElement(".section")
 const bg = getElement(".bg")
-const url = 'http://api.openweathermap.org/data/2.5/weather?appid=76394e1a21461e3743e211bec74d9384&q='
+const url = 'https://api.openweathermap.org/data/2.5/weather?appid=76394e1a21461e3743e211bec74d9384&q='
 
 var weather;
 var city;
