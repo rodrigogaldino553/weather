@@ -40,7 +40,7 @@ function request(city) {
 
         })
         .catch(error => {
-            alert(`${city} not found!`)
+            section.innerHTML = `<h1>${city} not found!</h1>`
         })
 }
 
