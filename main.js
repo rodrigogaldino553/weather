@@ -53,7 +53,7 @@ function found(weather) {
         <div class="main">
             <div class="information">
             <div class="information">
-                <h2>${toCelsius(weather.temp)}C</h2>
+                <h2>${toCelsius(weather.temp)}°C</h2>
                 <h4>Now</h4>
             </div>
         </div>
