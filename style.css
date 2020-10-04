@@ -10,8 +10,7 @@
     position:absolute;
     height: 300px;
     width: 400px;
-    left:50%;
-    transform:translateX(-50%);
+    left:70%;
     top:30%;
     margin-left: -200px;
     margin-top: -150px;
