@@ -59,11 +59,13 @@
     transform: translateX(-50%);
     display:flex;
     align-content: center;
+    transition: 400ms;
  
 }
 
 .section h1{
     color:rgba(166, 48, 235);
+    transition: 400ms;
 }
 
 .block{
