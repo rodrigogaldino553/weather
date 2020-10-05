@@ -91,6 +91,7 @@
     padding:20px;
     display:flex;
     flex-direction: column;
+    transition: 400ms;
 }
 
 .information h4{
