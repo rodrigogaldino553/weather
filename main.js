@@ -64,17 +64,17 @@ function found(weather) {
         <h1>${name}</h1>
         <div class="main">
             <div class="information">
-                <h2>${toCelsius(weather.temp_min)}C</h2>
+                <h2>${toCelsius(weather.temp_min)}°C</h2>
                 <h4>Min</h4>
             </div>
             <hr width="0px" height="20px">
             <div class="information">
-                <h2>${toCelsius(weather.temp)}C</h2>
+                <h2>${toCelsius(weather.temp)}°C</h2>
                 <h4>Now</h4>
             </div>
             <hr width="0px" height="20px">
             <div class="information">
-                <h2>${toCelsius(weather.temp_max)}C</h2>
+                <h2>${toCelsius(weather.temp_max)}°C</h2>
                 <h4>Max</h4>
             </div>
         </div>
