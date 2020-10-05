@@ -10,7 +10,7 @@
     position:absolute;
     height: 300px;
     width: 400px;
-    left:70%;
+    left:50%;
     transform: translateX(-50%);
     top:20%;
     display:flex;
@@ -52,11 +52,10 @@
 .section{
     padding:8px;
     position:absolute;
-    width: 400px;
-    height:300px;
     left:50%;
-    top:30%;
-    margin-top: 150px;
+    top: 40%;
+    margin-top: 30px;
+    width: 300px;
     transform: translateX(-50%);
     display:flex;
     align-content: center;
@@ -95,6 +94,12 @@
 .information h4{
     left:50%;
 
+}
+
+#only{
+    width: 300px;
+    display: flex;
+    justify-content: center;
 }
 
 .error h1{

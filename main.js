@@ -26,7 +26,6 @@ function formater(word) {
             newWord += word.charAt(c)
         }
     }
-
     return newWord
 }
 
@@ -35,24 +34,24 @@ function request(city) {
     fetch(url + city)
         .then(response => response.json())
         .then(data => {
-
             weather = data
 
         })
         .catch(error => {
-            notFound()
+            return error
         })
 }
 
 
 function found(weather) {
-    if (weather.temp_max == weather.temp_min) {
+    let name = weather.name
+    weather = weather.main
+    if (weather.temp_max == weather.temp_min && weather.temp_max == weather.temp) {
         var card = `
     <div class="block">
-        <h1>${city}</h1>
-        <div class="main">
-            <div class="information">
-            <div class="information">
+        <h1>${name}</h1>
+        <div class="main" id="only">
+            <div class="information" >
                 <h2>${toCelsius(weather.temp)}°C</h2>
                 <h4>Now</h4>
             </div>
@@ -62,7 +61,7 @@ function found(weather) {
     } else {
         var card = `
     <div class="block">
-        <h1>${city}</h1>
+        <h1>${name}</h1>
         <div class="main">
             <div class="information">
                 <h2>${toCelsius(weather.temp_min)}C</h2>
@@ -81,9 +80,19 @@ function found(weather) {
         </div>
     </div>
     `;
-    }
+    
+     }
     section.innerHTML = card
 
+}
+
+function notFound() {
+    let card = `
+    <div class="error">
+        <h1 color="red">ERROR!! ${city} Not Found!</h1>
+    </div>
+    `;
+    section.innerHTML = card
 }
 
 
@@ -97,24 +106,25 @@ function startApp() {
     city = formater(input_city.value) //.charAt(0).toUpperCase()+input_city.value.slice(1)
 
     section.innerHTML = `<h1>Searching ${city}...</h1>`
+    
     request(city)
+
+
     setTimeout(function () {
         //switchBg(urlImage)
-        if (weather.cod == 404) {
-            notFound()
+        if (weather != undefined) {
+            if (weather.cod != 404) {
+                found(weather)
 
+            } else {
+                notFound()
+            }
         } else {
-            found(weather.main)
+            notFound()
         }
     }, 2000)
+    weather = ''
+
 }
 
-function notFound() {
-    let card = `
-    <div class="error">
-        <h1 color="red">${city} Not Found!</h1>
-    </div>
-    `;
-    section.innerHTML = card
-}
 
